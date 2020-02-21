@@ -17,6 +17,12 @@ def add_contact():
         fullname = request.form['fullname']
         phone = request.form['phone']
         email = request.form['email']
+        print(fullname)
+        print(phone)
+        print(email)
+        return ('received')
+        
+
 
     return "add contact"
 
