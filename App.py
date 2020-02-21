@@ -11,7 +11,7 @@ mysql = MySQL(app)
 def Index():
     return render_template('index.html')
 
-@app.route('/add_contact', method=['POST'])
+@app.route('/add_contact', methods=['POST'])
 def add_contact():
     if request.method =='POST':
         fullname = request.form['fullname']
