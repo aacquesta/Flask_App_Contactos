@@ -33,11 +33,12 @@ def add_contact():
         flash("Contact added succesfully")
         return redirect (url_for('Index'))
 
-@app.route('/edit/<id>')
+@app.route('/edit/<id>',  methods = ['POST', 'GET'])
 def get_contact(id):
     cur=mysql.connection.cursor()
-    cur.execute('SELECT * FROM contacts WHERE id=%s', (id))#Declarar la consulta
-    data = cur.fetchall()    
+    cur.execute('SELECT * FROM contacts WHERE id = %s', (id))#Declarar la consulta
+    data = cur.fetchall()
+    cur.close()    
     print(data[0])
     return render_template('edit-contact.html', contact = data[0])
 
