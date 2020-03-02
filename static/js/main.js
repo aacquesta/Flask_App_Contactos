@@ -1,4 +1,4 @@
-const btnDelete = document.querySelectorAll('.btn-delete')
+const btnDelete = document.querySelectorAll('.btn-delete');
 if(btnDelete){
     const btnArray = Array.from(btnDelete);
     btnArray.forEach((btn) => {
@@ -7,5 +7,5 @@ if(btnDelete){
                 e.preventDefault();
             }
         });
-    });
+    })
 }  
