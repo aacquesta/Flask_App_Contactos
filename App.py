@@ -43,7 +43,7 @@ def add_contact():
 
 @app.route('/edit/<id>', methods = ['POST', 'GET'])
 def get_contact(id):
-    print(0,0,0,0,id,0,0,0,0)
+    print(0,0,0,0,id,0,0,0,0)   
     cur = mysql.connection.cursor()
     query='SELECT * FROM contacts WHERE id = {}'.format(id)
     cur.execute(query)
