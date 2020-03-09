@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST']= 'localhost'
 app.config['MYSQL_USER']= 'root'
 app.config['MYSQL_PASSWORD']= ''
-app.config['MYSQL_DB']= 'flaskcontacts'
+app.config['MYSQL_DB']= 'flaskcontacts_2'
 mysql = MySQL(app)
 
 
@@ -24,7 +24,7 @@ app.secret_key = "mysecretkey"
 @app.route('/')
 def Index():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM contacts')
+    cur.execute('SELECT * FROM contacts ORDER BY fullname')
     data = cur.fetchall()
     cur.close()
     return render_template('index.html', contacts = data)
